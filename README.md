@@ -2,6 +2,7 @@
 # Scraper
 
 This repository contains Python scripts for automated retrieval and analysis of sitemaps from [OpenCorporates](https://opencorporates.com/).
+P.S site aggresively bans multiple requests from same IP, so use of proxy is preferred.
 
 ## Contents
 - `requirements.txt` — list of required Python libraries
