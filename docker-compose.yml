@@ -1,0 +1,15 @@
+services:
+  worker-fetch:
+    image: worker:latest
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - QUEUE=fetch-queue
+    networks:
+      - temporal-network
+
+networks:
+  temporal-network:
+    driver: bridge
+    name: temporal-network
