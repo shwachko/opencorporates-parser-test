@@ -51,7 +51,7 @@ temporal server start-dev
 ```bash 
 docker compose up --build --scale worker-fetch=10
 ```
-4. **Go to Temporal UI or use Temporal CLI to start ParseSitemapLinksWorkflow with such input:**
+4. **Go to Temporal UI or use Temporal CLI to start ParseSitemapLinksWorkflow with fetch-queue queue and such input:**
 ```bash 
 {
   "main_link": "https://opencorporates.com/sitemap.xml.gz"
