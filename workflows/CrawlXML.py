@@ -2,9 +2,9 @@
 from temporalio import workflow
 from temporalio.common import RetryPolicy
 from datetime import timedelta
-from temporalio.exceptions import ApplicationError
+
 import asyncio
-from typing import List
+
 @workflow.defn(name="CrawlXMLWorkflow")
 class CrawlXMLWorkflow:
 

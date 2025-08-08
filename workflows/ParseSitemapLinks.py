@@ -5,7 +5,7 @@ from datetime import timedelta
 import asyncio
 
 @workflow.defn(name="ParseSitemapLinksWorkflow")
-class ParseSitemapLinks:
+class ParseSitemapLinksWorkflow:
 
     @workflow.run
     async def run(self, input: dict) -> str:
@@ -13,7 +13,7 @@ class ParseSitemapLinks:
 
         links = await workflow.execute_activity(
             "fetch_and_parse_gz_xml",
-            {"link": input["main_link"], "workflow_id": workflow.info().workflow_id, "run_id": workflow.info().run_id},
+            {"link": input["main_link"]},
             start_to_close_timeout=timedelta(minutes=2),
             heartbeat_timeout=timedelta(seconds=20),
             retry_policy=RetryPolicy(

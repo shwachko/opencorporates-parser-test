@@ -5,7 +5,7 @@ import logging
 
 from temporalio.worker import Worker
 
-from workflows.ParseSitemapLinks import ParseSitemapLinks
+from workflows.ParseSitemapLinks import ParseSitemapLinksWorkflow
 from workflows.CrawlXML import CrawlXMLWorkflow
 
 from activities.fetch_and_parse_gz_xml import fetch_and_parse_gz_xml
@@ -50,7 +50,7 @@ async def main():
     queue = os.getenv("QUEUE")
 
     if queue == "fetch-queue":
-        workflows = [ParseSitemapLinks, CrawlXMLWorkflow]
+        workflows = [ParseSitemapLinksWorkflow, CrawlXMLWorkflow]
         activities = [fetch_and_parse_gz_xml]
     else:
         raise ValueError(f"Unknown queue: {queue}")
