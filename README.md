@@ -3,6 +3,8 @@
 
 This repository contains Python scripts for automated retrieval and analysis of sitemaps from [OpenCorporates](https://opencorporates.com/).
 
+P.S site aggresively bans multiple requests from same IP, so use of proxy is preferred.
+
 ## Contents
 - `requirements.txt` — list of required Python libraries
 - `worker.py` — temporal worker
@@ -51,7 +53,7 @@ temporal server start-dev
 ```bash 
 docker compose up --build --scale worker-fetch=10
 ```
-4. **Go to Temporal UI or use Temporal CLI to start ParseSitemapLinksWorkflow with such input:**
+4. **Go to Temporal UI or use Temporal CLI to start ParseSitemapLinksWorkflow with fetch-queue queue and such input:**
 ```bash 
 {
   "main_link": "https://opencorporates.com/sitemap.xml.gz"
